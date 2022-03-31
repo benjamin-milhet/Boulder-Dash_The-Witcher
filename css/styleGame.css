@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "thewitcher-medium";
+    src:url("../font/thewitcher-4.ttf") format("truetype");
+   }
+   
+
+.case{
+    padding: 0;
+    margin: 0;
+
+}
+  
+.ligne{
+    display: flex;
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+}
+
+playground{
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    margin-top: 10vh;
+
+}
+
+body{
+    display: flex;
+    background-image: url("../images/kaermorhen.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;  
+    width: 100vw;
+    height: 100vh;  
+    margin: 0;
+}
+
+.imgCase{
+    width : 3em;
+    max-width: 100%;
+    max-height: auto;
+    display:block;
+}
+
+info{
+    background-color: rgba(176, 197, 240, 0.7);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    margin:20px;
+    margin-right: 0;
+    margin-top: 15vh;
+    height: 50%;
+}
+
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+td{
+    text-align: center;
+}
+
+.imgM{
+    width : 3em;
+    max-width: 100%;
+    max-height: auto;
+}
+
+p{
+    font-family: "thewitcher-medium";
+    font-size: 1.1em;
+    text-align: center;
+}
+
+label{
+    font-family: "thewitcher-medium";
+    font-size: 1.5em;
+    text-align: center;
+}
+
+button{
+    font-family: "thewitcher-medium";
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgba(103, 130, 84, 0.7);
+    padding: 10px;
+    width: 80%;
+    margin: 10px;
+}
+
+#menu{
+    background-color: rgba(41,50,81,0.7);
+}
+
+
+
+
+
+
