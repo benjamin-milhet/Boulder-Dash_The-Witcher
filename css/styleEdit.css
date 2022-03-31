@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "thewitcher-medium";
+    src:url("../font/thewitcher-4.ttf") format("truetype");
+   }
+   
+
+body{
+    display: flex;
+    background-image: url("../images/bgEdit.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;  
+    width: 100vw;
+    height: 100vh;  
+    margin: 0;
+}
+
+info{
+    background-color: rgba(176, 197, 240, 0.7);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    margin:20px;
+    margin-right: 0;
+    margin-top: 15vh;
+    height: 70%;
+}
+
+.imgM{
+    width : 3em;
+    max-width: 100%;
+    max-height: auto;
+}
+
+p{
+    font-family: "thewitcher-medium";
+    font-size: 1.1em;
+    text-align: center;
+}
+
+label{
+    font-family: "thewitcher-medium";
+    font-size: 1.5em;
+    text-align: center;
+}
+
+div{
+    text-align: center;
+}
+button{
+    font-family: "thewitcher-medium";
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgba(103, 130, 84, 0.7);
+    padding: 10px;
+    width: 80%;
+    margin-top: 50px;
+
+}
