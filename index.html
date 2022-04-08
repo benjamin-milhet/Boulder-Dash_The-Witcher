@@ -6,17 +6,30 @@
     <link rel="stylesheet" href="./css/styleMenu.css">
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
-    <title>Boulder-Crach</title>
+    <title>Boulder-Dash</title>
 </head>
 <body>
+
+    <titreJeux id="divTitre">
+        <h1 id="titre">Boulder-Dash </h1> <h1 id="sous-titre">: The Witcher Edition</h1>
+    </titreJeux>
+    
     <info>
-        <div style="display: inline;">
+        <div>
             <button id="jouer">Jouer</button>
             <button id="reprendre">Reprendre</button>
             <button id="edition">Editeur de niveau</button>
         </div>
     </info>
+    <choixCharactere>
+               
+        <div>
+            <img src="./images/PYen.png" alt="Yen">
+        </div>        
 
-    <script src="./js/menu.js"></script>
+    </choixCharactere>
+
+    <script src="./js/modeles/listTab.js"></script>
+    <script type="module" src="./js/controleurs/controleurMenu.js"></script>
 </body>
 </html>
