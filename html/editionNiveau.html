@@ -11,11 +11,24 @@
 <body>
     <info>
         <div style="display: inline;">
-            <button id="jouer">Jouer</button>
-        </div>
-        <div style="display: inline;">
+            <input type="file" name="file" id="file" accept=".txt"> 
+            <input type="text" name="nom" id="nom" value="Niveau importe"> 
+            <button id="charger">Charger le fichier</button>
+            <br>
+            <br>
+            <br>
+            <button id="menu">Menu</button>
+            <button id="reset">Reinitialiser les niveaux</button>
+            <br>
+            <br>
+            <br>
+            <p id="beware">Attention, si vous modifier l'ordre des niveaux, le niveau en cours sauvegarder sera supprimer !</p>
         </div>
     </info>
-
+    <ordre>
+        
+    </ordre>
+    <script src="../js/modeles/listTab.js"></script>
+    <script type="module" src="../js/controleurs/controleurEditionNiveau.js"></script>
 </body>
 </html>
