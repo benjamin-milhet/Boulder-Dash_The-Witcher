@@ -7,33 +7,31 @@
 .case{
     padding: 0;
     margin: 0;
+    background-color: rgba(33, 25, 25, 0.7);
 
 }
   
 .ligne{
     display: flex;
     box-sizing: border-box;
-
     padding: 0;
     margin: 0;
 }
 
-playground{
-    justify-content: center;
-    align-items: center;
-    margin: 40px;
-    margin-top: 10vh;
 
-}
 
 body{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);    
     background-image: url("../images/kaermorhen.png");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;  
     width: 100vw;
     height: 100vh;  
     margin: 0;
+    text-align: center;
 }
 
 .imgCase{
@@ -43,19 +41,27 @@ body{
     display:block;
 }
 
+playground{
+    grid-column: 2 / 8;
+    grid-row: 1; 
+    justify-content: center;
+    align-items: center;
+    margin: 5vh;
+    margin-top: 10vh;
+}
+
 info{
     background-color: rgba(176, 197, 240, 0.7);
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
+    grid-column: 1 /2;
+    grid-row: 1 / 5; 
     padding: 10px;
-    box-sizing: border-box;
-    margin:20px;
     margin-right: 0;
+    margin-left: 2vw;
     margin-top: 15vh;
-    height: 50%;
+    margin-bottom: 15vh;
+    border: 3px solid;
+    border-color: rgba(33, 25, 25, 0.7);
+
 }
 
 table{
@@ -96,6 +102,29 @@ button{
 
 #menu{
     background-color: rgba(41,50,81,0.7);
+}
+
+#popUp {
+    font-family: "thewitcher-medium";
+    display: none;
+
+    position: fixed;
+    width: 400px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -200px;
+
+    background-color: rgba(176, 197, 240, 0.7);
+    padding: 20px;
+    border: 1px solid #888;
+    
+    font-size: 1.5em;
+
+    border: 3px solid;
+    border-color: rgba(33, 25, 25, 0.7);
+
 }
 
 
