@@ -9,7 +9,15 @@
 Sujet proposé par M. Meunier (https://github.com/lmd-dev)
 
 ## Introduction
-Ce projet a pour but de faire une reproduction du jeu Boulder-Dash avec un thème personnel et des règles réinventées. Nous apprécions tous deux le jeu The Witcher et nous avons donc décidé de choisir ce thème. Le but du jeu est de récupérer l'ensemble des médaillons sans se faire attraper par un monstre tout en effectuant le moins de mouvements possible. Il est aussi possible de charger ses propres niveaux.
+Ce projet a pour but de faire une reproduction du jeu Boulder-Dash avec un thème personnel et des règles réinventées. Nous apprécions tous deux le jeu The Witcher et nous avons donc décidé de choisir ce thème. Le but du jeu est de récupérer l'ensemble des médaillons sans se faire attraper par un monstre tout en effectuant le moins de mouvements possible. Il est aussi possible de charger ses propres niveaux. (Tous les niveaus du jeu sont terminables !)
+
+### Touches de déplacement
+```
+  - z : Monter
+  - s : Descendre
+  - q : Gauche
+  - d : Droite
+```
 
 ## Déroulement du Projet
 Pour ce projet, nous nous sommes divisés les taches en deux, une personne s'est occupée de la partie HTML et CSS et l'autre de la partie de jeu.
@@ -25,3 +33,16 @@ La principale difficulté de ce projet était de correctement structuré notre c
   - Ajout de plusieurs personnages avec des capacités différentes
 
 ## Rendu final
+
+### Menu du jeu
+![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/menu.png?raw=true)
+
+### Menu d'édition du jeu
+![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/edition.png?raw=true)
+
+### Niveau 1 du jeu
+![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/niveau1.png?raw=true)
+
+### Fin du niveau 3 du jeu
+![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/finishNiveau3.png?raw=true)
+
