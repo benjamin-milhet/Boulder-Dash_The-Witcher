@@ -46,7 +46,7 @@ export class Game{
 
     // Permet d'instancier l'evenement de la recuperation des touches du clavier
     gestionMouvement() {
-        document.addEventListener("keyup", (event) => { // Evenement de la recuperation des touches du clavier
+        document.addEventListener("keyup", (event) => { // Evenement de la recuperation des touches du clavier (Le keyup est voulu pour ne pas risquer d'appuyer 2 fois sur une touche)
            this.reactionMouvement(event); // Action realiser lorsque le joueur appuie sur une touche du clavier
         }); 
     }
