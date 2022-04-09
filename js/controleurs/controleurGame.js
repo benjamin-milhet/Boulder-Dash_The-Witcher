@@ -35,6 +35,7 @@ export class Game{
 
     // Affiche le niveau en cours
     afficherMap() {
+        this.niveau.verifierPosRocher();
         this.vueNiveau.afficherMap(this.niveau.getMap(), this.niveau.getNbDiamant(), this.niveau.getNbDeplacement(), this.niveauEnCours, this.listMap.size); // Affichage du niveau en cours
     }
 

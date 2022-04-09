@@ -30,10 +30,11 @@ export class ControleurNiveau {
         let posPerso = this.getPositionHero(); // Recupere les coordonnées du personnage
         let x = posPerso[0]; // Recupere la ligne du personnage
         let y = posPerso[1]; // Recupere la colonne du personnage
-
-        if(this.map[x-1][y] == "V" && this.map[x-2][y] == "R"){ // Si la case du dessus est vide et que celle encore dessus est un rocher
-            this.map[x-2][y] = "V"; // On remplace le rocher par une case vide
-            this.map[x][y] = "R"; // On remplace la case du personnage par le rocher -> mort du personnage
+        if((x-2) >= 0 ) { // Impossible de mourir sur la ligne du haut
+            if(this.map[x-1][y] == "V" && this.map[x-2][y] == "R"){ // Si la case du dessus est vide et que celle encore dessus est un rocher
+                this.map[x-2][y] = "V"; // On remplace le rocher par une case vide
+                this.map[x][y] = "R"; // On remplace la case du personnage par le rocher -> mort du personnage
+            }
         }
 
         //Parcours du niveau en partant de la fin si plusieurs richer sont empiles
@@ -64,8 +65,8 @@ export class ControleurNiveau {
         switch (direction) { // On verifie la direction du personnage
             case "w":
             case "z":
-                if(x-1 >= 0){ // On verifie que la case du dessus existe
-                    if(this.map[x-1][y] != "B" && this.map[x-1][y] != "R"){ // On verifie que la case du dessus n'est pas un rocher ou un mur
+                if((x-1) >= 0){ // On verifie que la case du dessus existe
+                    if(this.map[x-1][y] != "M" && this.map[x-1][y] != "R"){ // On verifie que la case du dessus n'est pas un rocher ou un mur
                         if(this.map[x-1][y] == "D") this.augmenterDiamant(); // Si la case du dessus est un diamant, on l'ajoute au nombre de diamant
                         this.map[x][y] = newCase; // On remplace la case du personnage par une case vide
                         this.map[x-1][y] = "P"; // On remplace la case du dessus par le personnage
@@ -74,8 +75,8 @@ export class ControleurNiveau {
                 }
                 break;
             case "s":
-                if(x+1 <= 16){ // On verifie que la case du dessous existe
-                    if(this.map[x+1][y] != "B" && this.map[x+1][y] != "R"){ // On verifie que la case du dessous n'est pas un rocher ou un mur
+                if((x+1) <= 16){ // On verifie que la case du dessous existe
+                    if(this.map[x+1][y] != "M" && this.map[x+1][y] != "R"){ // On verifie que la case du dessous n'est pas un rocher ou un mur
                         if(this.map[x+1][y] == "D") this.augmenterDiamant(); // Si la case du dessous est un diamant, on l'ajoute au nombre de diamant
                         this.map[x][y] = newCase; // On remplace la case du personnage par une case vide
                         this.map[x+1][y] = "P"; // On remplace la case du dessous par le personnage
@@ -85,11 +86,11 @@ export class ControleurNiveau {
                 break;
             case "a":
             case "q":
-                if(y-1 >= 0){ // On verifie que la case de gauche existe
+                if((y-1) >= 0){ // On verifie que la case de gauche existe
                     if(this.map[x][y-1] == "R"){ // Si la case de gauche est un rocher
                         this.deplacerRocher(x,y-1); // On essaye de le deplacer
                     }
-                    else if(this.map[x][y-1] != "B" && this.map[x][y-1] != "R"){ // Si la case de gauche n'est pas un rocher ou un mur
+                    else if(this.map[x][y-1] != "M" && this.map[x][y-1] != "R"){ // Si la case de gauche n'est pas un rocher ou un mur
                         if(this.map[x][y-1] == "D") this.augmenterDiamant(); // Si la case de gauche est un diamant, on l'ajoute au nombre de diamant
                         this.map[x][y] = newCase; // On remplace la case du personnage par une case vide
                         this.map[x][y-1] = "P"; // On remplace la case de gauche par le personnage
@@ -98,11 +99,11 @@ export class ControleurNiveau {
                 }
                 break;
             case "d":
-                if(y+1 <= 32){ // On verifie que la case de droite existe
+                if((y+1) <= 32){ // On verifie que la case de droite existe
                     if(this.map[x][y+1] == "R"){ // Si la case de droite est un rocher
                             this.deplacerRocher(x,y+1); // On essaye de le deplacer
                     }
-                    else if(this.map[x][y+1] != "B" && this.map[x][y+1] != "R"){ // Si la case de droite n'est pas un rocher ou un mur
+                    else if(this.map[x][y+1] != "M" && this.map[x][y+1] != "R"){ // Si la case de droite n'est pas un rocher ou un mur
                         if(this.map[x][y+1] == "D") this.augmenterDiamant(); // Si la case de droite est un diamant, on l'ajoute au nombre de diamant
                         this.map[x][y] = newCase; // On remplace la case du personnage par une case vide
                         this.map[x][y+1] = "P"; // On remplace la case de droite par le personnage
@@ -120,7 +121,7 @@ export class ControleurNiveau {
     }
 
     // Permet de deplacer le rocher en fonction de la touche clavier appuye
-    deplacerRocher(posX, posY){
+    deplacerRocher(posX, posY) {
         let i = 0; // Variable pour savoir si on doit deplacer le rocher vers la gauche ou la droite
 
         if(this.lastMouvement == "a" || this.lastMouvement == "q"){ // Si la derniere direction du personnage est a gauche
@@ -138,7 +139,7 @@ export class ControleurNiveau {
     }
 
     // Permet d'actualiser le nombre de diamant restant
-    setAffichageNbDiamantRestant(nb){
+    setAffichageNbDiamantRestant(nb) {
         let nbDiamantRestant = document.querySelector("#nbDiamantRestant"); // On recupere la balise permettant d'afficher le nombre de diamant restant
         nbDiamantRestant.innerHTML = (this.getNbDiamantMap() + nb); // On actualise le nombre de diamant restant
     }
@@ -149,7 +150,7 @@ export class ControleurNiveau {
     }
 
     //getters et setters
-    getNbDiamantMap(){
+    getNbDiamantMap() {
         let nbDiamant = 0;
         for (let i = 0; i < this.map.length; i++) {
             for (let j = 0; j < this.map[i].length; j++) {
@@ -161,11 +162,11 @@ export class ControleurNiveau {
         return nbDiamant;
     }
 
-    augmenterDiamant(){
+    augmenterDiamant() {
         this.nbDiamant++;
     }
 
-    augmenterNbMouvement(){
+    augmenterNbMouvement() {
         this.nbMouvement++;
     }
 
@@ -173,23 +174,23 @@ export class ControleurNiveau {
         return Math.floor(Math.random() * (entier+1)); 
     }
 
-    getNbDeplacement(){
+    getNbDeplacement() {
         return this.nbMouvement;
     }
 
-    getMap(){
+    getMap() {
         return this.map;
     }
 
-    setNbDeplacement(nb){
+    setNbDeplacement(nb) {
         this.nbMouvement = nb;
     }
 
-    getNbDiamant(){
+    getNbDiamant() {
         return this.nbDiamant;
     }
 
-    setNbDiamant(nb){
+    setNbDiamant(nb) {
         this.nbDiamant = nb;
     }
 

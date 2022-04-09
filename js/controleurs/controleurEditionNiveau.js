@@ -8,7 +8,12 @@ let vueEditionNiveau = new VueEditionNiveau();
 window.onload = function () {
     let maps = controleurLocalStorage.getFromLocalStorage("maps"); // On recupere l'ensemble des niveaux
     if(maps == null) maps = []; // S'il est vide, on initialise un nouveau tableau vide
-    refresh(maps); // On affiche les niveaux
+    vueEditionNiveau.clearOrdre(); // On efface l'affichge des niveaux
+    vueEditionNiveau.afficherNiveuxFromMaps(getNomMapFromMaps(maps)); // On reaffiche l'ensemble des niveaux actualises
+    afficherNomNouveauNiveau();  // On actualise le nom du nouveau niveau 
+    gestionDeleteNiveau(); // On actualise la gestion des niveaux
+    flecheHautNiveau(); // On actualise l'evenement de changement de niveau vers le haut
+    flecheBasNiveau(); // On actualise l'evenement de changement de niveau vers le bas
     
 }
 
@@ -193,7 +198,7 @@ function refresh(maps) {
 function verificationContenuFile(data) {
     for(let i = 0; i < data.length; i++) { // On parcours la liste des lignes du fichier
         for(let j = 0; j < data[i].length; j++) { // On parcours la liste des cases de la ligne
-            if(data[i][j] != "R" && data[i][j] != "P" && data[i][j] != "B" && data[i][j] != "V" && data[i][j] != "T" && data[i][j] != "D") { // Si la case n'est pas une case valide
+            if(data[i][j] != "R" && data[i][j] != "P" && data[i][j] != "M" && data[i][j] != "V" && data[i][j] != "T" && data[i][j] != "D") { // Si la case n'est pas une case valide
                 return false; // On retourne false
             }
         }
