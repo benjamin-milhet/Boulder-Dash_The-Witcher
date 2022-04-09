@@ -59,11 +59,10 @@ export class ControleurNiveau {
         let x = tab[0]; // On recupere la ligne du personnage
         let y = tab[1]; // On recupere la colonne du personnage
 
-        let newCase = "V"; // 
+        let newCase = "V"; // Case vide
         this.lastMouvement = direction; // On enregistre la derniere direction du personnage
 
         switch (direction) { // On verifie la direction du personnage
-            case "w":
             case "z":
                 if((x-1) >= 0){ // On verifie que la case du dessus existe
                     if(this.map[x-1][y] != "M" && this.map[x-1][y] != "R"){ // On verifie que la case du dessus n'est pas un rocher ou un mur
@@ -84,7 +83,6 @@ export class ControleurNiveau {
                     }
                 }
                 break;
-            case "a":
             case "q":
                 if((y-1) >= 0){ // On verifie que la case de gauche existe
                     if(this.map[x][y-1] == "R"){ // Si la case de gauche est un rocher
@@ -124,7 +122,7 @@ export class ControleurNiveau {
     deplacerRocher(posX, posY) {
         let i = 0; // Variable pour savoir si on doit deplacer le rocher vers la gauche ou la droite
 
-        if(this.lastMouvement == "a" || this.lastMouvement == "q"){ // Si la derniere direction du personnage est a gauche
+        if(this.lastMouvement == "q"){ // Si la derniere direction du personnage est a gauche
             i = -1; // On doit deplacer le rocher vers la gauche
         } else {
             i = 1; // On doit deplacer le rocher vers la droite
