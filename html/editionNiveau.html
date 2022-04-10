@@ -14,20 +14,19 @@
             <input type="file" name="file" id="file" accept=".txt"> 
             <input type="text" name="nom" id="nom" value="Niveau importe"> 
             <button id="charger">Charger le fichier</button>
-            <br>
-            <br>
-            <br>
+
             <button id="menu">Menu</button>
             <button id="reset">Reinitialiser les niveaux</button>
-            <br>
-            <br>
-            <br>
+
             <p id="beware">Attention si vous modifiez l'ordre des niveaux, le niveau en cours sauvegardé sera supprimé !</p>
         </div>
     </info>
     <ordre>
         
     </ordre>
+
+    <audio src="../musique/theme.mp3" preload="auto" loop autoplay></audio>
+
     <script src="../js/modeles/listTab.js"></script>
     <script type="module" src="../js/controleurs/controleurEditionNiveau.js"></script>
 </body>

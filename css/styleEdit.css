@@ -75,6 +75,7 @@ button{
     padding: 10px;
     width: 63%;
     margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 button:hover {
