@@ -40,8 +40,8 @@ La principale difficulté de ce projet était de correctement structuré notre c
 ### Menu d'édition du jeu
 ![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/edition.png?raw=true)
 
-### Niveau 1 du jeu
-![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/niveau1.png?raw=true)
+### Niveau 3 du jeu
+![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/niveau3.png?raw=true)
 
 ### Fin du niveau 3 du jeu
 ![alt text](https://github.com/Orchanyne/Boulder-Dash_The-Witcher/blob/main/readme_img/finishNiveau3.png?raw=true)
