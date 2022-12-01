@@ -3,7 +3,7 @@
 ## Membres du groupe
 
   - Raif EL SAYED (https://github.com/ElSRaif)
-  - Benjamin MILHET (https://github.com/Orchanyne)
+  - Benjamin MILHET (https://github.com/benjamin-milhet)
 
 
 Sujet proposé par M. Meunier (https://github.com/lmd-dev)
